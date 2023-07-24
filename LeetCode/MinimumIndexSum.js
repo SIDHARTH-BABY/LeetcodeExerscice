@@ -1,3 +1,6 @@
+
+// 599. Minimum Index Sum of Two Lists
+
 function findRestaurant(list1, list2) {
   let leastSum = list1.length + list2.length;
 
@@ -35,7 +38,7 @@ console.log(findRestaurant(list1, list2));
 
 //another solution 
 // 2ndum same annu, but runtime speed down ll ullathin annu, because ithill 2 ndd seperate loop annu ullath, mukalill ullath nested loop annu
-// but problem velya vethyasam onnum illa , 2ndum nokkanam
+// but problem velya vethyasam onnum illa , 2ndum nokkanam because ith help cheyyum nested loop ozhivakkan
 
 
 // qstn start
