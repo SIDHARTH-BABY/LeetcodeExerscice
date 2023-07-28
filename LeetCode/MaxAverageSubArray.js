@@ -1,68 +1,26 @@
-function findMaxAverage(nums, k) {
-  let negNums = [];
-  if (nums.length === 1) {
-    return nums[0] / k;
-  }
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = 0; j < nums.length; j++) {
-      if (nums[i] < 0) {
-        let newNum = nums[i] * -1;
 
-        negNums.push(newNum);
-        negNums.sort((a, b) => {
-          return b - a;
-        });
-        nums.splice(i, 1);
-        break;
-      } else {
-        if (nums[i] > nums[j]) {
-          const subNum = nums[i];
-          nums[i] = nums[j];
-          nums[j] = subNum;
-        }
-      }
+
+//vv imp qst leetcode 64 easy array 
+
+// contiguous subarray ===> array ll , k=3 annengill, aduppich 3 values sum cheyumbolll, highest kituunath annu answer.
+var findMaxAverage = function(nums, k) {
+    let kSum = 0;
+    for(let i=0;i<k;i++){
+        kSum += nums[i];
     }
-  }
+    let windowSum = kSum;
+    for(let i=0;i<nums.length;i++){
+      console.log(nums[i+k],"num");
 
-  let pointerOne = 0;
-  let pointerTwo = 0;
-  let i = 1;
-  let posSum = 0;
-  let negSum = 0;
-  while (i <= k) {
-    if (negNums.length === 0) {
-      if (pointerOne === nums.length - 1) {
-        break;
-      }
-      posSum += nums[pointerOne];
-      console.log(posSum, "ppo");
-      pointerOne++;
-    } else {
-      if (nums[pointerOne] > negNums[pointerTwo]) {
-        if (pointerOne === nums.length - 1) {
-          break;
+      //imp step,try to understand below step 
+        windowSum = windowSum + nums[i+k] - nums[i];
+        if(windowSum > kSum){
+             kSum = windowSum;
         }
-
-        posSum += nums[pointerOne];
-        pointerOne++;
-      } else {
-        negSum += -negNums[pointerTwo];
-        if (pointerTwo === negNums.length - 1) {
-          break;
-        }
-        pointerTwo++;
-      }
     }
-
-    i++;
-  }
-  if (negNums === 0) {
-    return posSum / k;
-  } else {
-    return (posSum + negSum) / k;
-  }
-}
+    return kSum/k;
+};
 
 const arr = [1, 0, 1, 4, 2];
-let k = 4;
+let k = 2;
 console.log(findMaxAverage(arr, k));
