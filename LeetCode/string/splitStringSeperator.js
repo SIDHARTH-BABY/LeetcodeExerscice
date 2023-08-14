@@ -2,11 +2,8 @@ function splitWordsBySeparator(str, separator) {
   let result = [];
 
   for (let words of str) {
-    if (words.includes(separator)) {
-        
-      result.push(...words.split(separator).filter((p)=>{p}))
-      
-      
+    if (words.includes(separator)) {    
+      result.push(...words.split(separator).filter((p)=>{p})) 
     } else {
       result.push(words);
     }
