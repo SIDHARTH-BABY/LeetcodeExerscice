@@ -4,8 +4,9 @@ function uniqueNum(nums) {
     valid = 0;
     for (let j = 0; j < nums.length; j++) {
       if (i === j) {
-        j++;
+        j++
       }
+      console.log(nums[i],nums[j]);
       if (nums[i] === nums[j]) {
         valid++;
         break;
@@ -17,5 +18,5 @@ function uniqueNum(nums) {
   }
 }
 
-const nums = [4,1,2,1,2]
+const nums = [4,4,1,2,1,2]
 console.log(uniqueNum(nums));
