@@ -56,7 +56,6 @@
 
 // newOuter()
 
-
 //////////////////////////////////////////////////////////
 
 //different way
@@ -78,24 +77,22 @@
 
 // newOuter();
 
-
-
 ///////////////////////////////////////////////////////////////////
 
+// function counter(){
+//     let count =0
+//     this.increamentCouter=()=>{
+//         count++
+//         console.log(count);
+//     }
+//     this.decrementCouter=()=>{
+//         count--
+//         console.log(count);
+//     }
 
-function counter(){
-    let count =0
-    this.increamentCouter=()=>{
-        count++
-        console.log(count);
-    } 
-    this.decrementCouter=()=>{
-        count--
-        console.log(count);
-    } 
+// }
+// let newCounter = new counter()
 
-}
-let newCounter = new counter()
+// newCounter.increamentCouter()
 
-newCounter.increamentCouter()
-
+///////////////////////////////////////////////////////////////////

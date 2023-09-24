@@ -1,25 +1,25 @@
-// const obj = {
-//   fName: "sidharth",
-//   lName: "Baby",
-// };
+const obj = {
+  fName: "sidharth",
+  lName: "Baby",
+};
 
-// const PrintFullname = function hello(homeTown) {
-//   console.log(this.fName + " " + this.lName, "Hometown :", homeTown);
-// };
+const PrintFullname = function hello(homeTown) {
+  console.log(this.fName + " " + this.lName, "Hometown :", homeTown);
+};
 
-// PrintFullname.call(obj, "kanhangad");
-
-
-const object ={
-  fname :'siduh',
-  lName : 'baby'
-}
+PrintFullname.call(obj, "kanhangad");
 
 
-function printFullNmae (town){
-  console.log(this.fname +" "+ this.lName +" " +town);
-}
+// const object ={
+//   fname :'siduh',
+//   lName : 'baby'
+// }
 
-let byname = printFullNmae.bind(object,"khdd")
 
-byname()
+// function printFullNmae (town){
+//   console.log(this.fname +" "+ this.lName +" " +town);
+// }
+
+// let byname = printFullNmae.bind(object,"khdd")
+
+// byname()
