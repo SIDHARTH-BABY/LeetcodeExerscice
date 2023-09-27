@@ -1,44 +1,38 @@
-function firstLast(nums, tar) {
+function firstLast(nums, target) {
   let start = 0;
   let end = nums.length - 1;
-  let result = [];
-  let startFinisher = false;
-  let endFinisher = false;
-  while (start < end) {
-    if (
-      !startFinisher &&
-      !endFinisher &&
-      nums[start] === tar &&
-      nums[end] === tar
-    ) {
-      result.push(start);
-      result.push(end);
-      return result;
-    } else if (!startFinisher && nums[start] === tar) {
-      console.log("ppp");
-      result.push(start);
-      startFinisher = true;
-      end--;
-    } else if (!endFinisher && nums[end] === tar) {
-      console.log("jj");
-      result.push(end);
-      endFinisher = true;
-      start++;
-    } else {
-      if (!startFinisher) {
-        end--;
-      } else if (!endFinisher) {
-        start++;
-      } else {
-        start++;
-        end--;
-      }
+  let leftBound = -1;
+  let rightBound = -1;
+  while (start <= end) {
+    let mid = start + Math.floor((end - start) / 2);
+    console.log(mid, Math.floor((end - start) / 2), "mi");
+    if (nums[mid] === target && nums[mid - 1] !== target) {
+      leftBound = mid;
     }
-    if (startFinisher && endFinisher) {
-      console.log("ooo");
-      return result;
+    if (nums[mid] < target) {
+      start = mid + 1;
+      console.log(start, end, "jj");
+    } else {
+      end = mid - 1;
     }
   }
+  start = 0;
+  end = nums.length - 1;
+
+  while (start <= end) {
+    let mid = start + Math.floor((end - start) / 2);
+
+    if (nums[mid] === target && nums[mid + 1] !== target) {
+      rightBound = mid;
+    }
+    if (nums[mid] <= target) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+
+  return [leftBound, rightBound];
 }
 
 const nums = [5, 7, 7, 8, 8, 10];
