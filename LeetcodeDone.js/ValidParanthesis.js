@@ -21,5 +21,5 @@ function validPar(val) {
   }
 }
 
-const val = "([])[";
+const val = "([])[]";
 console.log(validPar(val));

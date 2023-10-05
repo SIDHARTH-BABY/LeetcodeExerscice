@@ -2,7 +2,7 @@
 // question num 561 leetcode
 function arrayPartion(nums) {
   nums.sort((a, b) => a - b);
-
+console.log(nums);
   let answer =0
   for (let i = 0; i < nums.length; i++) {
     answer += nums[i];

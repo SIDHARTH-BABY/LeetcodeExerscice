@@ -5,6 +5,7 @@ const isGood = (a) => {
   console.log(a);
   let n = a.length,
     v = 1;
+    console.log(n,'nn');
   if (a[n - 1] != a[n - 2]) return false;
   for (let i = 0; i < n - 1; i++) {
     if (a[i] != v) {
